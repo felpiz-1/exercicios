@@ -4,19 +4,20 @@
 
 const nomeAluno = "Mariana";
 const nota1 = 8;
-const nota2 = 5;
+const nota2 = 8;
 
 function calcularMedia() {
   let media = (nota1 + nota2) / 2;
+  return media; // adicionei a palavra media para retornar o valor calculado
 }
 
 const media = calcularMedia();
-
+let statusAluno; // declarei a variável statusAluno 
 
 if (media >= 7) {
-  const statusaluno = "Aprovado";
+    statusAluno = "Aprovado";
 } else {
-  const statusaluno = "Reprovado";
+   statusAluno = "Reprovado";
 }
 
-console.log("O aluno " + nomeAluno + " está: " + statusaluno);
+console.log("O aluno " + nomeAluno + " está: " + statusAluno);

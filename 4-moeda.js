@@ -3,25 +3,23 @@
 //  Identifique os erros presentes no código e corrija-os para que o conversor funcione corretamente.
 
 const taxaDolar = 5.50;
-
-function converterParaReal(valorDolar) {
-  let resultado = valorDolar * taxaDolar;
-  return resultado;
-}
-
-console.log("O valor convertido é de : R$ " + resultado);
-
-const transacao = {
+const transacao = { // declarei as variaveis antes
   usuario: "Carlos",
-  valor: "100,00",
+  valor: 100.00,
   concluida: true,
 };
 
-const valorFinal = converterParaReal;
-
-if (transacao.concluida == "sim") {
-  console.log("O valor convertido para " + transacao.usuario + " é: " + valorFinal);
+function converterParaReal(valorDolar) {
+  let resultado = transacao.valor * taxaDolar;
+  return resultado;
 }
-if (transacao.concluida == "não") {
+
+let resultado = converterParaReal(transacao.valor); // declarei a variavel resultado 
+const valorFinal = converterParaReal(transacao.valor);
+
+if (transacao.concluida == true) {
+  console.log("O valor convertido para " + transacao.usuario + " é: R$ " + valorFinal.toFixed(2));
+}
+else if (transacao.concluida == false) {
   console.log("Erro no processamento.");
 }
